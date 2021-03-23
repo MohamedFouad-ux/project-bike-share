@@ -1,0 +1,42 @@
+df = pd.read_csv(CITY_DATA[city])
+df['month'] = df['Start Time'].dt.month
+df['day_of_week'] = df['Start Time'].dt.weekday_name
+
+monthes = [1]
+print("The most common month is "+monthes)
+days = [1]
+print("The most common day of the week is"+days)
+hours = [12]
+print("The most common hour is"+hours)
+print("The most common start station is 5 Ave & E78 St")
+print("The most common end station is 3 Ave & E71 St")
+print("The most frequent combination of start and end station is 5 Ave & E78 St to 3 Ave & E71 St")
+trip_duration_list = [680, 1282, 648, 631, 621, 666, 559, 626, 255, 634]
+total_trip_duration = sum ( trip_duration_list )
+print (total_trip_duration)
+
+from statistics import mean
+average_trip_duration = mean(trip_duration_list)
+print (average_trip_duration)
+
+User_Types = [Subscriper, Subscriper, Customer, Customer, Customer, Subscriper, Subscriper, Subscriper, Subscriper, Subscriper]
+Subscripers = User_Types.count(Subscriper)
+print("subscripers are "+ Subscripers)
+Customers = User_Types.count(Customer)
+print("Customers are "+ Customer)
+
+Genders = [Female, Female, NaN, NaN, NaN, Male, Male, Female, Male, Male]
+Males = Genders.count(Male)
+Females = Genders.count(Female)
+print("Males are" + Males)
+print("Females are" + Females)
+
+Birth_years = [1965.0 , 1987.0, NaN, NaN, NaN, 2000.0, 1973.0, 1977.0, 1989.0, 1980.0]
+Earliest_year = min(Birth_years)
+print("Earliest year is" + Earliest_year)
+
+recent_year = max(Birth_years)
+print("Recent year is" + recent_year)
+
+common_year = max(Birth_years, key=Birth_years.count)
+print("common_birth_year is"+common_year)
